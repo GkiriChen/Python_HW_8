@@ -30,7 +30,6 @@ def get_birthdays_per_week(users=None):
                         if day_week in ('Saturday', 'Sunday'): #якщо день народження припадає на вихідні
                             day_week = 'Monday'
                         
-                        #print(ddd.get(day_week))
                         if ddd.get(day_week) == None: #запомнюємо словник 
                             ddd.update({day_week: key})
                         else:
@@ -42,7 +41,6 @@ def get_birthdays_per_week(users=None):
                                 name = ddd.get(day_week)
                                 name.append(key)
                                 ddd.update({day_week: name})
-                        #     print(name)
         print(ddd)
         for n in ddd:        
             if type(ddd[n]) != list:
