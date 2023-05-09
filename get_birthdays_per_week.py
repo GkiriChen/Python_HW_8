@@ -48,6 +48,6 @@ def get_birthdays_per_week(users=None):
             else:            
                 print(f"{n}:",', '.join(ddd[n]))
                 
-use = [{'Sveta': '2000-05-14'}, {'Gena': '2000-05-19'}, {'Mama': '2000-05-13'}, 
-       {'Oleg': '2000-05-14'}, {'Lena': '2000-05-22'}, {'Dima': '2000-05-18'}, {'Egor': '2000-05-14'}, {'Antom': '2000-05-15'}]
-get_birthdays_per_week(use)
+#use = [{'Sveta': '2000-05-14'}, {'Gena': '2000-05-19'}, {'Mama': '2000-05-13'}, 
+#       {'Oleg': '2000-05-14'}, {'Lena': '2000-05-22'}, {'Dima': '2000-05-18'}, {'Egor': '2000-05-19'}, {'Antom': '2000-05-15'}]
+#get_birthdays_per_week(use)
