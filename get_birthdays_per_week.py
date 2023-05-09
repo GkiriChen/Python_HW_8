@@ -26,23 +26,30 @@ def get_birthdays_per_week(users=None):
                         day = datetime(int(date_now.strftime("%Y")), int(date_b.strftime("%m")), int(date_b.strftime("%d") ))                    
                         #print(day.strftime("%A"), ':', key )
                         day_week = day.strftime("%A")
-                        
+                        #print(key, day_week)
                         if day_week in ('Saturday', 'Sunday'): #якщо день народження припадає на вихідні
                             day_week = 'Monday'
                         
+                        #print(ddd.get(day_week))
                         if ddd.get(day_week) == None: #запомнюємо словник 
                             ddd.update({day_week: key})
                         else:
-                            
-                            name = [ddd.get(day_week),]
-                            #print(name, key)
-                            name.append(key) 
-                            ddd.update({day_week: name})
-                    
-        #print(ddd)
+                            if type(ddd.get(day_week)) != list:                            
+                                name = [ddd.get(day_week),]
+                                name.append(key)
+                                ddd.update({day_week: name})
+                            else:
+                                name = ddd.get(day_week)
+                                name.append(key)
+                                ddd.update({day_week: name})
+                        #     print(name)
+        print(ddd)
         for n in ddd:        
             if type(ddd[n]) != list:
                 print(f"{n}: {ddd[n]}")
             else:            
                 print(f"{n}:",', '.join(ddd[n]))
                 
+use = [{'Sveta': '2000-05-14'}, {'Gena': '2000-05-19'}, {'Mama': '2000-05-13'}, 
+       {'Oleg': '2000-05-14'}, {'Lena': '2000-05-22'}, {'Dima': '2000-05-18'}, {'Egor': '2000-05-14'}, {'Antom': '2000-05-15'}]
+get_birthdays_per_week(use)
